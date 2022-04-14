@@ -1,6 +1,6 @@
 <?php
 
-namespace VenYuanBSN;
+namespace venyuanbsn;
 
 /***
  * 请求帮助类
@@ -93,7 +93,6 @@ class SendHelper
         foreach ($bytes as $ch) {
             $str .= chr($ch);
         }
-        echo base64_encode($str)."\n";
         return base64_encode($str);
     }
 }

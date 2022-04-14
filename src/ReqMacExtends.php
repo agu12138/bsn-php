@@ -1,5 +1,5 @@
 <?php
-namespace VenYuanBSN;
+namespace venyuanbsn;
 
 class ReqMacExtends{
 
@@ -11,7 +11,7 @@ class ReqMacExtends{
             $req['body']['name'],
             $req['body']['secret']
         ];
-        return base64_encode(join("",$arr));
+        return join("",$arr);
     }
 
     public static function ReqChainCodeReqMac($req)
@@ -35,6 +35,6 @@ class ReqMacExtends{
                 $arr[]=$v;
             }
          }
-        return base64_encode(join("",$arr));
+        return join("",$arr);
     }
 }

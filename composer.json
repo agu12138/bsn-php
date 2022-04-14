@@ -1,18 +1,19 @@
 {
-    "name": "venyuan/bsn",
+    "name": "bsn/sdk",
     "type": "library",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "agul",
             "email": "agul64980223@qq.com"
         }
     ],
-    "require": {
-    },
     "autoload": {
         "psr-4": {
-            "VenYuanBSN\\": "src/"
+            "venyuanbsn\\": "src/"
         }
+    },
+    "require": {
+        "venyuan/bsn": "1.0.2"
     }
 }

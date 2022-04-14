@@ -1,5 +1,55 @@
 {
-    "packages": [],
+    "packages": [
+        {
+            "name": "venyuan/bsn",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/agu12138/BSN.git",
+                "reference": "1742bd5c27a1d085010627775e1cfe06783f5ce9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/agu12138/BSN/zipball/1742bd5c27a1d085010627775e1cfe06783f5ce9",
+                "reference": "1742bd5c27a1d085010627775e1cfe06783f5ce9",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "time": "2022-04-14T06:33:20+00:00",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "venyuanbsn\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "agul",
+                    "email": "agul64980223@qq.com"
+                }
+            ],
+            "description": "BSN-ECDSA算法",
+            "support": {
+                "issues": "https://github.com/agu12138/BSN/issues",
+                "source": "https://github.com/agu12138/BSN/tree/1.0.2"
+            },
+            "install-path": "../venyuan/bsn"
+        }
+    ],
     "dev": true,
     "dev-package-names": []
 }

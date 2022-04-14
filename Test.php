@@ -1,8 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use VenYuanBSN\Config;
-use VenYuanBSN\NodeServer;
+use venyuanbsn\Config;
+use venyuanbsn\NodeServer;
+use venyuanbsn\SendHelper;
 
 function test()
 {
@@ -25,7 +26,7 @@ function test()
 
     $arr[] = $node->ReqChainCode([
         "args" => ['{"baseKey":"test202004212211","baseValue":"this is string111 "}'],
-        "nonce" => "uTAeXCVQHbrddfmzGAg/o4iV5jRxe6Et",//SendHelper::generateRandomString(),
+        "nonce" => SendHelper::generateRandomString(),
         "chainCode" => "cc_app0001202203021319180253003_01",
         "funcName" => "set",
         "userName" => "",

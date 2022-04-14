@@ -1,5 +1,5 @@
 <?php
-namespace VenYuanBSN;
+namespace venyuanbsn;
 
 class NodeServer
 {
@@ -67,6 +67,12 @@ class NodeServer
     /// </summary>
     private static  $TransUrl = "/api/fabric/v1/node/trans";
 
+
+    /**
+     * 
+     * 
+     * 
+     */
     function RegisterUser($reqbody)
     {
         $params = [
@@ -79,10 +85,15 @@ class NodeServer
                 "userCode" => $this->config["userCode"]
             ]
         ];
-       $params["mac"]=system(dirname(__FILE__)."\ECDSA.exe sign ".ReqMacExtends::GetRegisterUserReqMac($params));
+        $params["mac"]=BSN::sign(ReqMacExtends::GetRegisterUserReqMac($params));
         $res=SendHelper::post($this->config["reqUrl"].NodeServer::$registerUserUrl,$params);
         return $res;
     }
+
+    /***
+     * 
+     * 
+     */
     function ReqChainCode($reqbody)
     {
         $params = [
@@ -92,9 +103,7 @@ class NodeServer
                 "userCode" => $this->config["userCode"]
             ]
         ];
-        $params["mac"]=system(dirname(__FILE__)."\ECDSA.exe sign ".ReqMacExtends::ReqChainCodeReqMac($params));
-        echo ReqMacExtends::ReqChainCodeReqMac($params)."\n";
-        echo 1;
+        $params["mac"]=BSN::sign(ReqMacExtends::ReqChainCodeReqMac($params));
         $res=SendHelper::post($this->config["reqUrl"].NodeServer::$ReqChainCodeUrl,$params);
         return $res;
     }

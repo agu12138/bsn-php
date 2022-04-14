@@ -1,5 +1,5 @@
 <?php
-namespace VenYuanBSN;
+namespace venyuanbsn;
 
 class Config {
 
