@@ -1,0 +1,18 @@
+{
+    "name": "venyuan/bsn",
+    "type": "library",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "agul",
+            "email": "agul64980223@qq.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "VenYuanBSN\\": "src/"
+        }
+    }
+}
