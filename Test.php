@@ -5,36 +5,32 @@ use venyuanbsn\Config;
 use venyuanbsn\NodeServer;
 use venyuanbsn\SendHelper;
 
-function test()
-{
-    $config = Config::initConfig([
-        "reqUrl" => "https://nanjingtxynode.bsngate.com:17602",
-        "appInfo" => [
-            "AppCode" => "app0001202203021319180253003"
-        ],
-        "userCode" => "USER0001202203010919464625764",
-        "mspDir" => "./mspdir",
-        "httpsCert" => ""
-    ]);
 
-    $node = new NodeServer($config);
+$config = Config::initConfig([
+    "reqUrl" => "https://nanjingtxynode.bsngate.com:17602",
+    "appInfo" => [
+        "AppCode" => "app0001202203021319180253003"
+    ],
+    "userCode" => "USER0001202203010919464625764",
+    "mspDir" => "./mspdir",
+    "httpsCert" => ""
+]);
 
-    $arr[] = $node->RegisterUser([
-        "name" => "abc",
-        "secret" => "456"
-    ]);
+$node = new NodeServer($config);
 
-    $arr[] = $node->ReqChainCode([
-        "args" => ['{"baseKey":"test202004212211","baseValue":"this is string111 "}'],
-        "nonce" => SendHelper::generateRandomString(),
-        "chainCode" => "cc_app0001202203021319180253003_01",
-        "funcName" => "set",
-        "userName" => "",
-        "transientData" => [
-            "test" => "testtesttesttest"
-        ]
-    ]);
-    var_dump($arr);
-}
+$arr[] = $node->RegisterUser([
+    "name" => "abc",
+    "secret" => "456"
+]);
 
-test();
+$arr[] = $node->ReqChainCode([
+    "args" => ['{"baseKey":"test202004212211","baseValue":"this is string111 "}'],
+    "nonce" => SendHelper::generateRandomString(),
+    "chainCode" => "cc_app0001202203021319180253003_01",
+    "funcName" => "set",
+    "userName" => "",
+    "transientData" => [
+        "test" => "testtesttesttest"
+    ]
+]);
+var_dump($arr);
